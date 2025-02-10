@@ -6,25 +6,25 @@ part 'db_model.g.dart';
 
 class MyStudents {
   @HiveField(0)
-  String? name;
+ final String? name;
 
   @HiveField(1)
-  String? age;
+  final String? age;
 
   @HiveField(2)
-  String? cls;
+  final String? cls;
 
   @HiveField(3)
-  String? address;
+  final String? address;
 
   @HiveField(4)
-  String? image; 
+  final String? image; 
 
   MyStudents({required this.name,
   required this.age,
   required this.cls,
   required this.address,
-  this.image
+  required this.image
   });
 }
 

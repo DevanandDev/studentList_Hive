@@ -19,7 +19,7 @@ Future<void>getMyStudents()async{
   final studentDB= await Hive.openBox<MyStudents>('database');
   StudentListNotifier.value.clear();
   StudentListNotifier.value.addAll(studentDB.values);
-  StudentListNotifier.notifyListeners(); //ui upadate cehyyan
+  StudentListNotifier.notifyListeners(); //ui update cehyyan
 }
 
 // deleting fields for using index 
@@ -28,11 +28,9 @@ Future<void>getMyStudents()async{
   final studentDB=await Hive.openBox<MyStudents>('database');
   studentDB.deleteAt(index);
   getMyStudents();
- }
-
+ }                                                                                                                                                                                                                                                                                                                                   
  Future<void>updateStudent(MyStudents value,int index) async{
   final studentDB=await Hive.openBox<MyStudents>('database');
   studentDB.putAt(index, value);
   getMyStudents();
-
  }
